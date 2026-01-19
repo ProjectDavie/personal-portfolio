@@ -39,7 +39,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold mb-10">Projects</h2>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {/* Wish Verse Card */}
+          {/* Wish Verse */}
           <Link
             href="/projects/wish-verse"
             className="group rounded-2xl border border-neutral-800 p-6 hover:border-purple-500 transition"
@@ -64,8 +64,59 @@ export default function HomePage() {
               <span className="rounded-full border px-3 py-1">
                 TypeScript
               </span>
+            </div>
+          </Link>
+
+          {/* Photo Shrank */}
+          <Link
+            href="/projects/photo-shrank"
+            className="group rounded-2xl border border-neutral-800 p-6 hover:border-purple-500 transition"
+          >
+            <h3 className="text-2xl font-semibold group-hover:text-purple-400 transition">
+              Photo Shrank
+            </h3>
+
+            <p className="mt-4 text-neutral-400">
+              A desktop application for fast image compression and resizing
+              while preserving quality.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2 text-sm text-neutral-500">
               <span className="rounded-full border px-3 py-1">
-                Git
+                Electron
+              </span>
+              <span className="rounded-full border px-3 py-1">
+                Node.js
+              </span>
+              <span className="rounded-full border px-3 py-1">
+                Desktop
+              </span>
+            </div>
+          </Link>
+
+          {/* Personal Portfolio */}
+          <Link
+            href="/projects/personal-portfolio"
+            className="group rounded-2xl border border-neutral-800 p-6 hover:border-purple-500 transition"
+          >
+            <h3 className="text-2xl font-semibold group-hover:text-purple-400 transition">
+              Personal Portfolio
+            </h3>
+
+            <p className="mt-4 text-neutral-400">
+              A modern developer portfolio built with Next.js and Tailwind CSS
+              to showcase projects and skills.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2 text-sm text-neutral-500">
+              <span className="rounded-full border px-3 py-1">
+                Next.js
+              </span>
+              <span className="rounded-full border px-3 py-1">
+                React
+              </span>
+              <span className="rounded-full border px-3 py-1">
+                Tailwind CSS
               </span>
             </div>
           </Link>
