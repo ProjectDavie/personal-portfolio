@@ -8,7 +8,7 @@ import ProjectsCarousel from "@/components/ProjectsCarousel";
 export default function HomePage() {
   return (
     <main className="relative min-h-screen bg-black text-white px-[5vw]">
-      
+
       {/* Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md">
         <div className="w-full max-w-[1200px] mx-auto py-[clamp(0.5rem,2vw,1rem)]">
@@ -19,11 +19,18 @@ export default function HomePage() {
       {/* Content Wrapper */}
       <div className="pt-[clamp(4rem,10vw,6rem)]">
 
-        {/* Hero Section */}
-        <HeroSection />
+        {/* ✅ HERO + CAROUSEL SHARE VIEWPORT */}
+        <div className="flex flex-col justify-start items-center min-h-[85vh]">
 
-        {/* Projects Carousel */}
-        <ProjectsCarousel />
+          {/* Hero */}
+          <HeroSection />
+
+          {/* Carousel (tight spacing, always visible) */}
+          <div className="w-full flex justify-center mt-4 md:mt-6">
+            <ProjectsCarousel />
+          </div>
+
+        </div>
 
         {/* Projects Section */}
         <section
@@ -36,7 +43,6 @@ export default function HomePage() {
 
           <div className="grid gap-[clamp(1rem,3vw,2rem)] md:grid-cols-2">
 
-            {/* Project Card */}
             <Link
               href="/projects/wish-verse"
               className="group rounded-2xl border border-neutral-800 p-[clamp(1rem,3vw,2rem)] hover:border-purple-500 transition"
