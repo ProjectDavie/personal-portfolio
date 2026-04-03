@@ -24,15 +24,14 @@ export function PortfolioNavbar() {
       <div className="flex w-full items-center justify-end h-[clamp(3rem,6vw,4rem)]">
 
         <div className="flex items-center gap-[clamp(0.5rem,2vw,1.5rem)]">
-          {socialLinks.map((social, index) => (
+          {socialLinks.map((social) => (
             <a
               key={social.label}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "transition-transform hover:scale-110 text-cyan-400",
-                index > 2 && "hidden sm:inline-flex"
+                "transition-transform hover:scale-110 text-cyan-400"
               )}
             >
               <social.icon
