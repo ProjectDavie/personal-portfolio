@@ -5,7 +5,8 @@ import React from "react";
 export default function HeroSection() {
   return (
     <section className="w-full bg-black text-white">
-      <div className="flex flex-col items-center text-center px-[5vw] py-6 md:py-10 md:px-[10vw] space-y-4 md:space-y-6">
+      <div className="flex flex-col items-center text-center px-[5vw] pt-24 md:pt-36 pb-16 md:pb-24 md:px-[10vw] space-y-4 md:space-y-6">
+        {/* Further increased pt-24 md:pt-36 for top, pb-16 md:pb-24 for bottom */}
 
         <h1 className="font-extrabold tracking-tight text-[clamp(2rem,5vw,3.5rem)] md:text-[clamp(3rem,4vw,5rem)]">
           Hi, I’m <span className="text-purple-500">Project Davie ⭐</span>

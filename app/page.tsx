@@ -26,7 +26,8 @@ export default function HomePage() {
           <HeroSection />
 
           {/* Carousel (tight spacing, always visible) */}
-          <div className="w-full flex justify-center mt-4 md:mt-6">
+          <div className="w-full flex justify-center mt-12 md:mt-16">
+            {/* Increased mt-12 md:mt-16 for more space above carousel */}
             <ProjectsCarousel />
           </div>
 
