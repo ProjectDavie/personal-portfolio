@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { PortfolioNavbar } from "@/components/PortfolioNavbar";
+import HeroSection from "@/components/HeroSection";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 
 export default function HomePage() {
   return (
@@ -18,33 +20,10 @@ export default function HomePage() {
       <div className="pt-[clamp(4rem,10vw,6rem)]">
 
         {/* Hero Section */}
-        <section className="w-full max-w-[1200px] mx-auto py-[clamp(2rem,6vw,5rem)]">
-          
-          <h1 className="font-extrabold tracking-tight text-[clamp(2rem,5vw,3.5rem)]">
-            Hi, I’m <span className="text-purple-500">Project Davie ⭐</span>
-          </h1>
+        <HeroSection />
 
-          <p className="mt-[clamp(1rem,3vw,2rem)] text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-400 max-w-[600px]">
-            I build modern mobile and web applications focused on clean
-            architecture, great user experience, and scalable systems.
-          </p>
-
-          <div className="mt-[clamp(1.5rem,4vw,3rem)] flex flex-wrap gap-[clamp(0.5rem,2vw,1rem)]">
-            <Link
-              href="#projects"
-              className="rounded-lg bg-purple-600 px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.6rem,2vw,0.9rem)] font-medium hover:bg-purple-700 transition"
-            >
-              View Projects
-            </Link>
-
-            <Link
-              href="#contact"
-              className="rounded-lg border border-neutral-700 px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.6rem,2vw,0.9rem)] font-medium hover:border-neutral-500 transition"
-            >
-              Contact Me
-            </Link>
-          </div>
-        </section>
+        {/* Projects Carousel */}
+        <ProjectsCarousel />
 
         {/* Projects Section */}
         <section
@@ -127,10 +106,10 @@ export default function HomePage() {
           className="border-t border-neutral-800 py-[clamp(2rem,5vw,3rem)] text-center text-neutral-500"
         >
           <p>
-            © {new Date().getFullYear()} Project Davie — Built with Next.js &
-            Tailwind CSS
+            © {new Date().getFullYear()} Project Davie — Built with Next.js & Tailwind CSS
           </p>
         </footer>
+
       </div>
     </main>
   );
