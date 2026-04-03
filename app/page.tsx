@@ -1,42 +1,45 @@
 "use client";
 
 import Link from "next/link";
-import { PortfolioNavbar } from "@/components/PortfolioNavbar"; // import the navbar component
+import { PortfolioNavbar } from "@/components/PortfolioNavbar";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen bg-black text-white px-6 md:px-12">
-      {/* Sticky Transparent Navbar */}
+    <main className="relative min-h-screen bg-black text-white px-[5vw]">
+      
+      {/* Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-4">
+        <div className="w-full max-w-[1200px] mx-auto py-[clamp(0.5rem,2vw,1rem)]">
           <PortfolioNavbar />
         </div>
       </div>
 
-      {/* Add top padding so content doesn't hide behind navbar */}
-      <div className="pt-28">
+      {/* Content Wrapper */}
+      <div className="pt-[clamp(4rem,10vw,6rem)]">
+
         {/* Hero Section */}
-        <section className="max-w-5xl mx-auto pt-8 pb-20">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight">
+        <section className="w-full max-w-[1200px] mx-auto py-[clamp(2rem,6vw,5rem)]">
+          
+          <h1 className="font-extrabold tracking-tight text-[clamp(2rem,5vw,3.5rem)]">
             Hi, I’m <span className="text-purple-500">Project Davie ⭐</span>
           </h1>
 
-          <p className="mt-6 text-lg md:text-xl text-neutral-400 max-w-2xl">
+          <p className="mt-[clamp(1rem,3vw,2rem)] text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-400 max-w-[600px]">
             I build modern mobile and web applications focused on clean
             architecture, great user experience, and scalable systems.
           </p>
 
-          <div className="mt-10 flex gap-4">
+          <div className="mt-[clamp(1.5rem,4vw,3rem)] flex flex-wrap gap-[clamp(0.5rem,2vw,1rem)]">
             <Link
               href="#projects"
-              className="rounded-lg bg-purple-600 px-6 py-3 font-medium hover:bg-purple-700 transition"
+              className="rounded-lg bg-purple-600 px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.6rem,2vw,0.9rem)] font-medium hover:bg-purple-700 transition"
             >
               View Projects
             </Link>
 
             <Link
               href="#contact"
-              className="rounded-lg border border-neutral-700 px-6 py-3 font-medium hover:border-neutral-500 transition"
+              className="rounded-lg border border-neutral-700 px-[clamp(1rem,3vw,1.5rem)] py-[clamp(0.6rem,2vw,0.9rem)] font-medium hover:border-neutral-500 transition"
             >
               Contact Me
             </Link>
@@ -44,16 +47,22 @@ export default function HomePage() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="max-w-5xl mx-auto pb-24">
-          <h2 className="text-3xl font-bold mb-10">Projects</h2>
+        <section
+          id="projects"
+          className="w-full max-w-[1200px] mx-auto py-[clamp(2rem,6vw,5rem)]"
+        >
+          <h2 className="text-[clamp(1.5rem,4vw,2rem)] font-bold mb-[clamp(1.5rem,4vw,3rem)]">
+            Projects
+          </h2>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {/* Wish Verse */}
+          <div className="grid gap-[clamp(1rem,3vw,2rem)] md:grid-cols-2">
+
+            {/* Project Card */}
             <Link
               href="/projects/wish-verse"
-              className="group rounded-2xl border border-neutral-800 p-6 hover:border-purple-500 transition"
+              className="group rounded-2xl border border-neutral-800 p-[clamp(1rem,3vw,2rem)] hover:border-purple-500 transition"
             >
-              <h3 className="text-2xl font-semibold group-hover:text-purple-400 transition">
+              <h3 className="text-[clamp(1.2rem,3vw,1.5rem)] font-semibold group-hover:text-purple-400 transition">
                 Wish Verse
               </h3>
 
@@ -70,12 +79,11 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* Photo Shrank */}
             <Link
               href="/projects/photo-shrank"
-              className="group rounded-2xl border border-neutral-800 p-6 hover:border-purple-500 transition"
+              className="group rounded-2xl border border-neutral-800 p-[clamp(1rem,3vw,2rem)] hover:border-purple-500 transition"
             >
-              <h3 className="text-2xl font-semibold group-hover:text-purple-400 transition">
+              <h3 className="text-[clamp(1.2rem,3vw,1.5rem)] font-semibold group-hover:text-purple-400 transition">
                 Photo Shrank
               </h3>
 
@@ -91,18 +99,16 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* Personal Portfolio */}
             <Link
               href="/projects/personal-portfolio"
-              className="group rounded-2xl border border-neutral-800 p-6 hover:border-purple-500 transition"
+              className="group rounded-2xl border border-neutral-800 p-[clamp(1rem,3vw,2rem)] hover:border-purple-500 transition"
             >
-              <h3 className="text-2xl font-semibold group-hover:text-purple-400 transition">
+              <h3 className="text-[clamp(1.2rem,3vw,1.5rem)] font-semibold group-hover:text-purple-400 transition">
                 Personal Portfolio
               </h3>
 
               <p className="mt-4 text-neutral-400">
-                A modern developer portfolio built with Next.js and Tailwind CSS
-                to showcase projects and skills.
+                A modern developer portfolio built with Next.js and Tailwind CSS.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-2 text-sm text-neutral-500">
@@ -111,13 +117,14 @@ export default function HomePage() {
                 <span className="rounded-full border px-3 py-1">Tailwind CSS</span>
               </div>
             </Link>
+
           </div>
         </section>
 
         {/* Footer */}
         <footer
           id="contact"
-          className="border-t border-neutral-800 py-12 text-center text-neutral-500"
+          className="border-t border-neutral-800 py-[clamp(2rem,5vw,3rem)] text-center text-neutral-500"
         >
           <p>
             © {new Date().getFullYear()} Project Davie — Built with Next.js &
