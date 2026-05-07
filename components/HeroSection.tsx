@@ -9,7 +9,7 @@ export default function HeroSection() {
         {/* Reduced md:pt-36 to md:pt-28 and md:pb-24 to md:pb-16 for better fit on desktop */}
 
         <h1 className="font-extrabold tracking-tight text-[clamp(2rem,5vw,3.5rem)] md:text-[clamp(3rem,4vw,5rem)]">
-          Hi, I’m <span className="text-purple-500">Project Davie ⭐</span>
+          Hi, I’m <span className="text-purple-500">ProjectDavie⭐</span>
         </h1>
 
         <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-400 max-w-[600px]">

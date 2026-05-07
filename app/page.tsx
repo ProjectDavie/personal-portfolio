@@ -10,7 +10,7 @@ export default function HomePage() {
     <main className="relative min-h-screen bg-black text-white px-[5vw]">
 
       {/* Navbar */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-black/30 backdrop-blur-md">
+      <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
         <div className="w-full max-w-[1200px] mx-auto py-[clamp(0.5rem,2vw,1rem)]">
           <PortfolioNavbar />
         </div>
@@ -18,6 +18,7 @@ export default function HomePage() {
 
       {/* Content Wrapper */}
       <div className="pt-[clamp(4rem,10vw,6rem)]">
+        
 
         {/* ✅ HERO + CAROUSEL SHARE VIEWPORT */}
         <div className="flex flex-col justify-start items-center min-h-[85vh]">
@@ -32,7 +33,7 @@ export default function HomePage() {
           </div>
 
         </div>
-
+        
         {/* Projects Section */}
         <section
           id="projects"
@@ -113,7 +114,7 @@ export default function HomePage() {
           className="border-t border-neutral-800 py-[clamp(2rem,5vw,3rem)] text-center text-neutral-500"
         >
           <p>
-            © {new Date().getFullYear()} Project Davie — Built with Next.js & Tailwind CSS
+            © {new Date().getFullYear()} ProjectDavie — Built with Next.js & Tailwind CSS
           </p>
         </footer>
 

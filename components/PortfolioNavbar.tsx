@@ -13,15 +13,15 @@ import { cn } from "@/lib/utils";
 // ✅ Make sure this is declared before using it
 const socialLinks = [
   { icon: Twitch, href: "https://twitch.tv/ProjectDavie", label: "Twitch" },
-  { icon: Youtube, href: "https://youtube.com/ProjectDavie", label: "YouTube" },
+  { icon: Youtube, href: "https://youtube.com/@ProjectDavie", label: "YouTube" },
   { icon: Twitter, href: "https://x.com/ProjectDavie", label: "X.com" },
-  { icon: Instagram, href: "https://instagram.com/ProjectDavie", label: "Instagram" },
+  { icon: Instagram, href: "https://instagram.com/Project.Davie", label: "Instagram" },
   { icon: Music2, href: "https://tiktok.com/@ProjectDavie", label: "TikTok" },
 ];
 
 export function PortfolioNavbar() {
   return (
-    <header className="w-full bg-transparent backdrop-blur-none absolute top-0 left-0 z-50">
+<header className="w-full bg-transparent backdrop-blur-none absolute top-0 left-0 z-50">
   <div className="flex w-full items-center justify-end h-[clamp(3rem,6vw,4rem)]">
     <div
       className="
