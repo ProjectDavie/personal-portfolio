@@ -1,7 +1,3 @@
-// ===============================================
-// components/SceneCanvas.tsx
-// ===============================================
-
 "use client";
 
 import { Canvas } from "@react-three/fiber";
@@ -12,42 +8,22 @@ export default function SceneCanvas() {
   return (
     <div
       className="
-        fixed
+        absolute
         inset-0
-        w-screen
-        h-screen
-        z-[999]
+        w-full
+        h-full
+        z-[60]
         pointer-events-none
         overflow-hidden
       "
     >
       <Canvas
         camera={{
-          /*
-            X:
-            negative = camera looks more LEFT
-            positive = camera looks more RIGHT
-
-            Y:
-            positive = camera higher
-            negative = camera lower
-
-            Z:
-            smaller = zoom in
-            bigger = zoom out
-          */
-          position: [-1.8, 0.2, 8],
-
-          /*
-            portrait cinematic zoom
-          */
-          fov: 26,
+          position: [0, 1.8, 10],
+          fov: 32,
         }}
       >
-
-        {/* =========================================
-            LIGHTING
-        ========================================= */}
+        {/* LIGHTING */}
 
         <ambientLight intensity={2.2} />
 
@@ -70,7 +46,6 @@ export default function SceneCanvas() {
         <Suspense fallback={null}>
           <Model />
         </Suspense>
-
       </Canvas>
     </div>
   );

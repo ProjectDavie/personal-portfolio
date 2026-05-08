@@ -41,42 +41,34 @@ export default function Model() {
 const animation = useRef({
   /*
     START POSITION
+    top-right hero area
   */
 
-  x: 1.6,
-
-  y: -2.3,
+  x: 1.15,
+  y: 1.1,
 
   /*
-    LANDING POSITION
+    FINAL LANDING
+    beside project cards
   */
 
-  endX: -3.8,
-
-  endY: -5.2,
+  endX: -2.8,
+  endY: -3.7,
 
   /*
-    START FACING CAMERA
+    START FACING LEFT
   */
 
-  rotationY: 0,
+  rotationY: -90,
 
   /*
-    TARGET ROTATION
-    90 during movement
+    FINAL FACING RIGHT
   */
 
-  targetRotation: 90,
+  finalRotation: 180,
 
   /*
-    FINAL LANDING ROTATION
-    slightly angled instead of full side
-  */
-
-  landingRotation: 35,
-
-  /*
-    SPIN VALUE
+    TOTAL SPIN
   */
 
   spin: 0,
@@ -113,21 +105,26 @@ const animation = useRef({
   */
 
   useEffect(() => {
+  const section =
+    document.querySelector("#cinematic-section");
+
+  if (!section) return;
+
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: document.body,
+      trigger: section,
 
       start: "top top",
 
       end: "bottom bottom",
 
-      scrub: 1.2,
+      scrub: 1.4,
     },
   });
 
   /*
     =========================================
-    MOVE DIAGONALLY
+    DIAGONAL TRAVEL
   =========================================
   */
 
@@ -137,57 +134,45 @@ const animation = useRef({
     y: animation.current.endY,
 
     duration: 1,
+
+    ease: "power2.out",
   });
 
   /*
     =========================================
-    ROTATE TO SIDE
-    while moving
+    270 DEGREE SPIN
   =========================================
   */
 
   tl.to(
     animation.current,
     {
-      rotationY:
-        animation.current.targetRotation,
-
-      duration: 0.45,
-    },
-    0
-  );
-
-  /*
-    =========================================
-    REDUCE ANGLE BEFORE LANDING
-  =========================================
-  */
-
-  tl.to(
-    animation.current,
-    {
-      rotationY:
-        animation.current.landingRotation,
-
-      duration: 0.35,
-    },
-    0.65
-  );
-
-  /*
-    =========================================
-    360 SPIN
-  =========================================
-  */
-
-  tl.to(
-    animation.current,
-    {
-      spin: 360,
+      spin: 270,
 
       duration: 0.7,
+
+      ease: "power3.out",
     },
-    0
+    0.05
+  );
+
+  /*
+    =========================================
+    FINAL LANDING ROTATION
+  =========================================
+  */
+
+  tl.to(
+    animation.current,
+    {
+      rotationY:
+        animation.current.finalRotation,
+
+      duration: 0.45,
+
+      ease: "expo.out",
+    },
+    0.55
   );
 
   return () => {
@@ -231,16 +216,16 @@ const animation = useRef({
     */
 
     group.current.position.y +=
-      Math.sin(state.clock.elapsedTime * 2) *
-      0.02;
+  Math.sin(state.clock.elapsedTime * 1.8) *
+  0.045;
 
     /*
       SUBTLE TILT
     */
 
     group.current.rotation.z =
-      Math.sin(state.clock.elapsedTime * 2) *
-      0.04;
+  Math.sin(state.clock.elapsedTime * 1.5) *
+  0.025;
   });
 
   return (
@@ -251,13 +236,13 @@ const animation = useRef({
         40% SMALLER
       */
 
-      scale={0.023}
+      scale={0.014}
 
       /*
         INITIAL POSITION
       */
 
-      position={[1.6, -2.3, 0]}
+      position={[1.15, 1.1, 0]}
     >
       <primitive object={idleFbx} />
     </group>
