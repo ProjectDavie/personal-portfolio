@@ -1,124 +1,54 @@
+// ===============================================
+// app/page.tsx
+// ===============================================
+
 "use client";
 
-import Link from "next/link";
 import { PortfolioNavbar } from "@/components/PortfolioNavbar";
 import HeroSection from "@/components/HeroSection";
-import ProjectsCarousel from "@/components/ProjectsCarousel";
+import ProjectsSection from "@/components/ProjectsSection";
+import SceneCanvas from "@/components/SceneCanvas";
 
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen bg-black text-white px-[5vw]">
+    <main className="relative bg-black text-white overflow-x-hidden">
 
-      {/* Navbar */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-transparent">
-        <div className="w-full max-w-[1200px] mx-auto py-[clamp(0.5rem,2vw,1rem)]">
+      {/* =========================================
+          GLOBAL 3D CANVAS
+          NOW FLOATS OVER ENTIRE PAGE
+      ========================================= */}
+      <SceneCanvas />
+
+      {/* NAVBAR */}
+      <div className="fixed top-0 left-0 w-full z-[100]">
+        <div className="mx-auto max-w-[1400px] px-[4vw] py-5">
           <PortfolioNavbar />
         </div>
       </div>
 
-      {/* Content Wrapper */}
-      <div className="pt-[clamp(4rem,10vw,6rem)]">
-        
+      {/* HERO */}
+      <HeroSection />
 
-        {/* ✅ HERO + CAROUSEL SHARE VIEWPORT */}
-        <div className="flex flex-col justify-start items-center min-h-[85vh]">
+      {/* PROJECTS */}
+      <ProjectsSection />
 
-          {/* Hero */}
-          <HeroSection />
+      {/* FOOTER */}
+      <footer
+        id="contact"
+        className="
+          relative
+          z-[20]
+          border-t
+          border-neutral-800
+          py-16
+          text-center
+          text-neutral-500
+          bg-black
+        "
+      >
+        © {new Date().getFullYear()} ProjectDavie — Built with Next.js
+      </footer>
 
-          {/* Carousel (tight spacing, always visible) */}
-          <div className="w-full flex justify-center mt-12 md:mt-16">
-            {/* Increased mt-12 md:mt-16 for more space above carousel */}
-            <ProjectsCarousel />
-          </div>
-
-        </div>
-        
-        {/* Projects Section */}
-        <section
-          id="projects"
-          className="w-full max-w-[1200px] mx-auto py-[clamp(2rem,6vw,5rem)]"
-        >
-          <h2 className="text-[clamp(1.5rem,4vw,2rem)] font-bold mb-[clamp(1.5rem,4vw,3rem)]">
-            Projects
-          </h2>
-
-          <div className="grid gap-[clamp(1rem,3vw,2rem)] md:grid-cols-2">
-
-            <Link
-              href="/projects/wish-verse"
-              className="group rounded-2xl border border-neutral-800 p-[clamp(1rem,3vw,2rem)] hover:border-purple-500 transition"
-            >
-              <h3 className="text-[clamp(1.2rem,3vw,1.5rem)] font-semibold group-hover:text-purple-400 transition">
-                Wish Verse
-              </h3>
-
-              <p className="mt-4 text-neutral-400">
-                A mobile-first application built with React Native and Expo,
-                featuring authentication flows, protected routes, and a custom
-                splash screen experience.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2 text-sm text-neutral-500">
-                <span className="rounded-full border px-3 py-1">React Native</span>
-                <span className="rounded-full border px-3 py-1">Expo</span>
-                <span className="rounded-full border px-3 py-1">TypeScript</span>
-              </div>
-            </Link>
-
-            <Link
-              href="/projects/photo-shrank"
-              className="group rounded-2xl border border-neutral-800 p-[clamp(1rem,3vw,2rem)] hover:border-purple-500 transition"
-            >
-              <h3 className="text-[clamp(1.2rem,3vw,1.5rem)] font-semibold group-hover:text-purple-400 transition">
-                Photo Shrank
-              </h3>
-
-              <p className="mt-4 text-neutral-400">
-                A desktop application for fast image compression and resizing
-                while preserving quality.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2 text-sm text-neutral-500">
-                <span className="rounded-full border px-3 py-1">Electron</span>
-                <span className="rounded-full border px-3 py-1">Node.js</span>
-                <span className="rounded-full border px-3 py-1">Desktop</span>
-              </div>
-            </Link>
-
-            <Link
-              href="/projects/personal-portfolio"
-              className="group rounded-2xl border border-neutral-800 p-[clamp(1rem,3vw,2rem)] hover:border-purple-500 transition"
-            >
-              <h3 className="text-[clamp(1.2rem,3vw,1.5rem)] font-semibold group-hover:text-purple-400 transition">
-                Personal Portfolio
-              </h3>
-
-              <p className="mt-4 text-neutral-400">
-                A modern developer portfolio built with Next.js and Tailwind CSS.
-              </p>
-
-              <div className="mt-6 flex flex-wrap gap-2 text-sm text-neutral-500">
-                <span className="rounded-full border px-3 py-1">Next.js</span>
-                <span className="rounded-full border px-3 py-1">React</span>
-                <span className="rounded-full border px-3 py-1">Tailwind CSS</span>
-              </div>
-            </Link>
-
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer
-          id="contact"
-          className="border-t border-neutral-800 py-[clamp(2rem,5vw,3rem)] text-center text-neutral-500"
-        >
-          <p>
-            © {new Date().getFullYear()} ProjectDavie — Built with Next.js & Tailwind CSS
-          </p>
-        </footer>
-
-      </div>
     </main>
   );
 }

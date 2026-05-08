@@ -1,39 +1,127 @@
-"use client";
+// ===============================================
+// components/HeroSection.tsx
+// ===============================================
 
-import React from "react";
+"use client";
 
 export default function HeroSection() {
   return (
-    <section className="w-full bg-black text-white">
-      <div className="flex flex-col items-center text-center px-[5vw] pt-24 md:pt-28 pb-16 md:pb-16 md:px-[10vw] space-y-4 md:space-y-6">
-        {/* Reduced md:pt-36 to md:pt-28 and md:pb-24 to md:pb-16 for better fit on desktop */}
+    <section
+      className="
+        relative
+        z-[20]
+        min-h-screen
+        w-full
+        overflow-hidden
+        bg-black
+      "
+    >
 
-        <h1 className="font-extrabold tracking-tight text-[clamp(2rem,5vw,3.5rem)] md:text-[clamp(3rem,4vw,5rem)]">
-          Hi, I’m <span className="text-purple-500">ProjectDavie⭐</span>
-        </h1>
+      {/* CONTENT */}
+      <div
+        className="
+          flex
+          min-h-screen
+          items-center
+          px-[6vw]
+        "
+      >
+        <div className="max-w-[600px]">
 
-        <p className="text-[clamp(1rem,2.5vw,1.25rem)] text-neutral-400 max-w-[600px]">
-          I build modern mobile and web applications focused on clean
-          architecture, great user experience, and scalable systems.
-        </p>
-
-        <div className="flex flex-wrap gap-4 justify-center mt-4">
-          <a
-            href="#projects"
-            className="rounded-lg bg-purple-600 px-6 py-2 font-medium hover:bg-purple-700 transition"
+          <p
+            className="
+              mb-5
+              text-sm
+              uppercase
+              tracking-[0.35em]
+              text-purple-400
+            "
           >
-            View Projects
-          </a>
+            Creative Developer
+          </p>
 
-          <a
-            href="#contact"
-            className="rounded-lg border border-neutral-700 px-6 py-2 font-medium hover:border-neutral-500 transition"
+          <h1
+            className="
+              text-[clamp(4rem,8vw,8rem)]
+              font-black
+              leading-[0.9]
+              tracking-tight
+            "
           >
-            Contact Me
-          </a>
+            Hi, I’m{" "}
+            <span className="text-purple-500">
+              ProjectDavie
+            </span>
+          </h1>
+
+          <p
+            className="
+              mt-8
+              max-w-[520px]
+              text-lg
+              leading-relaxed
+              text-neutral-400
+            "
+          >
+            I build immersive web and mobile experiences
+            focused on cinematic interaction systems,
+            smooth animation pipelines, premium UI,
+            and scalable architecture.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-5">
+
+            <a
+              href="#projects"
+              className="
+                rounded-2xl
+                bg-purple-600
+                px-8
+                py-4
+                font-semibold
+                transition
+                hover:bg-purple-700
+              "
+            >
+              View Projects
+            </a>
+
+            <a
+              href="#contact"
+              className="
+                rounded-2xl
+                border
+                border-neutral-700
+                px-8
+                py-4
+                font-semibold
+                transition
+                hover:border-neutral-500
+                hover:bg-neutral-900
+              "
+            >
+              Contact Me
+            </a>
+
+          </div>
         </div>
-
       </div>
+
+      {/* GLOW */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-0
+          h-[700px]
+          w-[700px]
+          -translate-x-1/2
+          rounded-full
+          bg-purple-500/10
+          blur-3xl
+        "
+      />
     </section>
   );
 }
